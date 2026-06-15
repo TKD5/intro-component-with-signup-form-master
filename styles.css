@@ -4,7 +4,7 @@
 }
 
 body {
-     background-image: url(images/bg-intro-desktop.png);
+     background-image: url(bg-intro-desktop.png);
     background-color: #ff7979;
 }
 
@@ -231,7 +231,7 @@ a:hover {
 @media (max-width: 700px) {
 
     body {
-        background-image: url(images/bg-intro-mobile.png);
+        background-image: url(bg-intro-mobile.png);
     }
 
     .container {
