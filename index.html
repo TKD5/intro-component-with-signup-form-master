@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+   
+</head>
+<body>
+
+<main>
+    <div class="container">
+
+    <div class="text-container">
+      <h1>Learn to code by watching others</h1>
+      <p>See how experienced developers solve problems in real-time. <br>Watching scripted tutorials is great, <br>
+          but understanding how developers think is invaluable.</p>
+    </div>
+    
+    <div class="table-container">
+  <form id="signup-form" novalidate> <p class="trial-box"><span class="seven-days">Try it free 7 days</span> then $20/mo. thereafter</p>
+    
+    <div class="form-input">
+      
+      <div class="input-group">
+        <div class="field-wrapper">
+          <input type="text" id="first-name" placeholder="First Name">
+          <img src="images/icon-error.svg" alt="error symbol" class="error-icon">
+        </div>
+        <p class="error-text">First Name cannot be empty</p>
+      </div>
+
+      <div class="input-group">
+        <div class="field-wrapper">
+          <input type="text" id="last-name" placeholder="Last Name"> 
+          <img src="images/icon-error.svg" alt="error symbol" class="error-icon">
+        </div>
+        <p class="error-text">Last Name cannot be empty</p>
+      </div>
+
+      <div class="input-group">
+        <div class="field-wrapper">
+          <input type="email" id="email" placeholder="Email Address">
+          <img src="images/icon-error.svg" alt="error symbol" class="error-icon">
+        </div>
+        <p class="error-text">Looks like this is not an email</p>
+      </div>
+
+      <div class="input-group">
+        <div class="field-wrapper">
+          <input type="password" id="password" placeholder="Password">
+          <img src="images/icon-error.svg" alt="error symbol" class="error-icon">
+        </div>
+        <p class="error-text">Password cannot be empty</p>
+      </div>
+      
+      <input class="button" type="submit" value="CLAIM YOUR FREE TRIAL">
+      <p class="terms-text">By clicking the button, you are agreeing to our <a href="#" class="bold">Terms and Services</a></p>
+    </div>
+  </form>
+</div>
+  </div>
+</main>
+
+      <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/TKD5" target="_blank">Karl Davis</a>.
+    </footer>
+
+    <script>
+  const form = document.getElementById('signup-form');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevents the form from page refreshing instantly
+    
+    // Grab all input fields
+    const inputs = form.querySelectorAll('.field-wrapper input');
+    
+    inputs.forEach(input => {
+      const inputGroup = input.closest('.input-group');
+      let isValid = true;
+      
+      // Check if field is empty
+      if (input.value.trim() === '') {
+        isValid = false;
+      } 
+      // Specialized email regex validation
+      else if (input.type === 'email') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(input.value.trim())) {
+          isValid = false;
+        }
+      }
+
+      // Toggle the .error class based on validity
+      if (!isValid) {
+        inputGroup.classList.add('error');
+      } else {
+        inputGroup.classList.remove('error');
+      }
+    });
+  });
+</script>
+</body>
+
+</html>

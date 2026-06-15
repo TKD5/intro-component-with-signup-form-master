@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+     background-image: url(images/bg-intro-desktop.png);
+    background-color: #ff7979;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+}
+
+.text-container {
+    width: 100%;
+    margin-right: 20px;
+    padding: 20px;
+    font-size: 20px;
+    align-self: center;
+}
+.text-container p {
+    font-size: 16px;
+}
+
+.trial-box {
+    background-color: #5d55a4;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 1px 4px 3px hsla(249, 10%, 26%, 0.312) ;
+    text-align: center;
+}
+.table-container {
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+form, input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input {
+    border: 1px solid hsl(246, 25%, 77%);
+}
+
+.form-input {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.table-container p:last-child{
+    font-size: 10px;
+    color: gray;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+input {
+    display: block;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+.button {
+    background-color: #37cc8a;
+    box-shadow: 1px 2px 2px #55ab87 ;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #70ffbf;
+    transition: 1s;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #ff7979;
+}
+
+a:active {
+    color: #5d55a4;
+}
+a:hover {
+    text-shadow: gray 0.5px 0.5px;
+}
+
+ .attribution { 
+    font-size: 0.6875rem; text-align: center; 
+    margin-bottom: 10px;
+}
+
+.attribution a 
+    { color: hsl(228, 45%, 44%); 
+}
+
+.test {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.test input {
+    display: inline-block; /* Allows the icon to sit on the same line */
+    margin-bottom: 15px;      /* Prevents double spacing issues */
+    flex-grow: 1;          /* Forces the input to take up all available horizontal space */
+}
+
+.test img {
+    margin-left: 10px;   /* Adds a clean gap between the input and your icon */
+    margin-bottom: 15px;
+    height: 24px;       
+    width: 24px;
+
+}
+
+/* Container for both the input field and its specific error message */
+.input-group {
+    margin-bottom: 20px;
+}
+
+/* Wrapper to layer the input and the icon together */
+.field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Make sure user text doesn't overlap the error icon on the right */
+.field-wrapper input {
+    width: 100%;
+    margin-bottom: 0; /* Margin is now handled by .input-group */
+    padding-right: 45px; 
+}
+
+/* Hide the error icon by default and position it inside the right side of the input */
+.field-wrapper .error-icon {
+    display: none;
+    position: absolute;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+}
+
+/* Hide the error message text by default */
+.error-text {
+    display: none;
+    color: #ff7979;
+    font-size: 11px;
+    margin-top: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* --- THE ERROR STATES --- */
+/* When `.error` is applied to the .input-group, these styles trigger instantly */
+
+.input-group.error input {
+    border: 2px solid #ff7979;
+    color: #ff7979;
+}
+
+/* Changes placeholder color to red when error is active */
+.input-group.error input::placeholder {
+    color: rgba(255, 121, 121, 0.6);
+}
+
+.input-group.error .error-icon {
+    display: block; /* Shows the icon inside the field */
+}
+
+.input-group.error .error-text {
+    display: flex; /* Shows the text below the field */
+    justify-content: flex-end;
+    color: #ff7979;
+
+}
+
+/* Quick fix for your footer terms style conflict */
+.form-input .terms-text {
+    font-size: 11px !important;
+    color: gray !important;
+    text-align: center;
+    margin-top: 15px;
+}
+
+@media (max-width: 700px) {
+
+    body {
+        background-image: url(images/bg-intro-mobile.png);
+    }
+
+    .container {
+    display: flex;
+    flex-direction: column; 
+}
+
+    .text-container {
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        font-size: 16px;
+    }
+
+    .table-container {
+        justify-content: center;
+        margin: auto;
+}
+
+    .trial-box {
+        font-size: 18px;
+    }
+
+    .seven-days {
+        font-weight: bold;
+    }
+}
